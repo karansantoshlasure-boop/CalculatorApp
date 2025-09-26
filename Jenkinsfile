@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER = 'mwaghmodepersistent'
-        IMAGE_NAME     = 'calculatorapp'
+        DOCKERHUB_USER = 'karanlasure'
+        IMAGE_NAME     = 'helloworld'
         IMAGE_TAG      = "latest"
     }
 
@@ -39,7 +39,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'dockerhub-credentials',
+                    credentialsId: 'karanlasure-dockerhub-credentials',
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
